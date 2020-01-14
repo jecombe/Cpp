@@ -1,47 +1,53 @@
 
 #include "main.h"
 
-
-
 void exitProgram()
 {
   std::cout << '\n';
   exit(EXIT_SUCCESS);
 }
 
-void doesMatch(const std::string mystr, PhoneBook *book)
+void read(Person person[])
 {
-  
+    std::string mystr;
 
-  if (mystr == "ADD")
+    int i = 0;
+  while (std::getline(std::cin, mystr))
   {
-    std::cout << "YOU CAN ADD CONTACT IN YOUR PHONEBOOK" << std::endl;
-    book->person[0].setPerson();
-  //  std::cout << book->person[0].firstName;
-  }
-  else if (mystr == "SEARCH")
-  {
-        //std::cout << book->person[0].firstName;
+    if (mystr == "ADD")
+    {
+      if (i < 8)
+        person[i++] = setPerson();
+      else
+        std::cout << BOLDRED << "FULL" << std::endl;
+        std::cout <<  BOLDWHITE << "$> " << RESET;
 
 
-    book->print();
+    }
+    else if (mystr == "SEARCH")
+    {
+      if (i > 0)
+        print(person, i);
+      else
+        std::cout << BOLDRED << "EMPTY" << std::endl;
+    }
+    else if (mystr == "EXIT")
+    {
+      exitProgram();
+    }
+    else
+    {
+        std::cout <<  BOLDWHITE << "$> " << RESET;
+    }
+    
   }
-  else if (mystr == "EXIT")
-  {
-    exitProgram();
-  }
+
 }
-
 int main()
 {
-  PhoneBook book;
-  std::string line;
-  std::cout << "$> ";
-  while (std::getline(std::cin, line))
-  {
-     doesMatch(line, &book);
-    std::cout << "$> ";
+  Person person[8];
+  std::cout <<  BOLDWHITE << "$> " << RESET;
+  read(person);
 
-  }
   return 0;
 }

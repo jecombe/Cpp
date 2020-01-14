@@ -16,8 +16,9 @@ vpath %.cpp src
 NAME = phoneBook
 
 SRC			= main.cpp\
-				PhoneBook.cpp\
-				Person.cpp
+				print.cpp\
+				Person.cpp\
+				setPerson.cpp
 OBJDIR = ./obj/
 INCDIR = ./include/
 

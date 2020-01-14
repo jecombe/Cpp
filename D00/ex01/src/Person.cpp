@@ -1,130 +1,114 @@
 #include "main.h"
-/*
-void Person::read()
+
+Person::Person(void) { return ; }
+Person::~Person(void) { return ; }
+
+std::string Person::getFirstName(void)
 {
-  //std::string people[11];
-  std::string mystr;
-
-  std::cout << "first name: ";
-  getline(std::cin, mystr);
-  this->firstName = mystr;
-
-  std::cout << "last name: ";
-  getline(std::cin, mystr);
-    this->lastName = mystr;
-
-  //people[1] = mystr;
-
-  std::cout << "nick name: ";
-  getline(std::cin, mystr);
-this->nickName = mystr;
-
-  //people[2] = mystr;
-
-  std::cout << "login name: ";
-  getline(std::cin, mystr);
-  this->login = mystr;
-  //people[3] = mystr;
-
-  std::cout << "postal address: ";
-  getline(std::cin, mystr);
-  this->postalAddress = mystr;
- // people[4] = mystr;
-
-  std::cout << "email address: ";
-  getline(std::cin, mystr);
-  this->emailAddress = mystr;
-  //people[5] = mystr;
-
-  std::cout << "phone number: ";
-  getline(std::cin, mystr);
-  this->phoneNumber = mystr;
-  //people[6] = mystr;
-
-  std::cout << "birthday date: ";
-  getline(std::cin, mystr);
-  this->birthdayDate = mystr;
- // people[7] = mystr;
-
-  std::cout << "favorite meal: ";
-  getline(std::cin, mystr);
-  this->favoriteMeal = mystr;
-  //people[8] = mystr;
-
-  std::cout << "underwear color: ";
-  getline(std::cin, mystr);
-  this->underWearColor = mystr;
- // people[9] = mystr;
-
-  std::cout << "Darkest Secret: ";
-  getline(std::cin, mystr);
-  this->darkestSecret = mystr;
-  //people[10] = mystr;
-
-  //Person contact(people[0], people[1], people[2], people[3], people[4], people[5], people[6], people[7], people[8], people[9], people[10]);
-  //return contact;
+  return (this->firstName);
 }
-*/
 
-void Person::setPerson()
+std::string Person::getLastName(void)
 {
-    //person[i++] = people;
+  return (this->lastName);
+}
 
-    std::string mystr;
+std::string Person::getNickName(void)
+{
+  return (this->nickName);
+}
 
-    std::cout << "first name: ";
-    getline(std::cin, mystr);
-    this->firstName = mystr;
+std::string Person::getLogin(void)
+{
+  return (this->login);
+}
 
-    std::cout << "last name: ";
-    getline(std::cin, mystr);
-    this->lastName = mystr;
+std::string Person::getPostalAddress(void)
+{
+  return (this->postalAddress);
+}
 
-    //people[1] = mystr;
+std::string Person::getEmailAddress(void)
+{
+  return (this->emailAddress);
+}
 
-    std::cout << "nick name: ";
-    getline(std::cin, mystr);
-    this->nickName = mystr;
+std::string Person::getPhoneNumber(void)
+{
+  return (this->phoneNumber);
+}
 
-    //people[2] = mystr;
+std::string Person::getBirthdayDate(void)
+{
+  return (this->birthdayDate);
+}
 
-    std::cout << "login name: ";
-    getline(std::cin, mystr);
-    this->login = mystr;
-    //people[3] = mystr;
+std::string Person::getFavoriteMeal(void)
+{
+  return (this->favoriteMeal);
+}
 
-    std::cout << "postal address: ";
-    getline(std::cin, mystr);
-    this->postalAddress = mystr;
-    // people[4] = mystr;
+std::string Person::getUnderWearColor(void)
+{
+  return (this->underWearColor);
+}
 
-    std::cout << "email address: ";
-    getline(std::cin, mystr);
-    this->emailAddress = mystr;
-    //people[5] = mystr;
+std::string Person::getDarkestSecret(void)
+{
+  return (this->darkestSecret);
+}
 
-    std::cout << "phone number: ";
-    getline(std::cin, mystr);
-    this->phoneNumber = mystr;
-    //people[6] = mystr;
+void Person::setFirstName(std::string str)
+{
+  this->firstName = str;
+}
 
-    std::cout << "birthday date: ";
-    getline(std::cin, mystr);
-    this->birthdayDate = mystr;
-    // people[7] = mystr;
+void Person::setLastName(std::string str)
+{
+  this->lastName = str;
+}
 
-    std::cout << "favorite meal: ";
-    getline(std::cin, mystr);
-    this->favoriteMeal = mystr;
-    //people[8] = mystr;
+void Person::setNickname(std::string str)
+{
+  this->nickName = str;
+}
 
-    std::cout << "underwear color: ";
-    getline(std::cin, mystr);
-    this->underWearColor = mystr;
-    // people[9] = mystr;
+void Person::setLogin(std::string str)
+{
+  this->login = str;
+}
 
-    std::cout << "Darkest Secret: ";
-    getline(std::cin, mystr);
-    this->darkestSecret = mystr;
-    std::cout << "$> ";
+void Person::setPostalAddress(std::string str)
+{
+  this->postalAddress = str;
+}
+
+void Person::setEmailAddress(std::string str)
+{
+  this->emailAddress = str;
+}
+
+void Person::setPhoneNumber(std::string str)
+{
+  this->phoneNumber = str;
+}
+
+void Person::setBirthdayDate(std::string str)
+{
+  this->birthdayDate = str;
+}
+
+void Person::setFavoriteMeal(std::string str)
+{
+  this->favoriteMeal = str;
+}
+
+void Person::setUnderwearColor(std::string str)
+{
+  this->underWearColor = str;
+}
+
+void Person::setDarkestSecret(std::string str)
+{
+  this->darkestSecret = str;
 }
