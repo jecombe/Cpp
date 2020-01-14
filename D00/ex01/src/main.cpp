@@ -3,15 +3,15 @@
 
 void exitProgram()
 {
-  std::cout << '\n';
+  std::cout << std::endl;
   exit(EXIT_SUCCESS);
 }
 
 void read(Person person[])
 {
-    std::string mystr;
+  std::string mystr;
+  int i = 0;
 
-    int i = 0;
   while (std::getline(std::cin, mystr))
   {
     if (mystr == "ADD")
@@ -20,9 +20,7 @@ void read(Person person[])
         person[i++] = setPerson();
       else
         std::cout << BOLDRED << "FULL" << std::endl;
-        std::cout <<  BOLDWHITE << "$> " << RESET;
-
-
+      std::cout << BOLDWHITE << "$> " << RESET;
     }
     else if (mystr == "SEARCH")
     {
@@ -37,16 +35,14 @@ void read(Person person[])
     }
     else
     {
-        std::cout <<  BOLDWHITE << "$> " << RESET;
+      std::cout << BOLDWHITE << "$> " << RESET;
     }
-    
   }
-
 }
 int main()
 {
   Person person[8];
-  std::cout <<  BOLDWHITE << "$> " << RESET;
+  std::cout << BOLDWHITE << "$> " << RESET;
   read(person);
 
   return 0;

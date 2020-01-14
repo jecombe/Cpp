@@ -35,7 +35,7 @@ $(OBJDIR)%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $< $(INCLUDE)
 
 $(NAME): $(OBJDIR) $(O_FILES)
-	$(CXX) -o $(NAME) $(O_FILES) $(INCLUDE)
+	$(CXX) -std=c++17 -o $(NAME) $(O_FILES) $(INCLUDE)
 
 $(OBJDIR):
 	@mkdir $@

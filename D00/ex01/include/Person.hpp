@@ -4,9 +4,6 @@
 class Person
 {
 public:
-    Person(void);
-    ~Person(void);
-
     void setFirstName(std::string);
     void setLastName(std::string);
     void setNickname(std::string);
@@ -43,8 +40,7 @@ private:
     std::string underWearColor;
     std::string darkestSecret;
 };
-Person             setPerson(void);
-void                print(Person person[], int nb);
-
+Person setPerson(void);
+void print(Person person[], int nb);
 
 #endif

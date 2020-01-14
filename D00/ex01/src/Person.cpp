@@ -1,8 +1,5 @@
 #include "main.h"
 
-Person::Person(void) { return ; }
-Person::~Person(void) { return ; }
-
 std::string Person::getFirstName(void)
 {
   return (this->firstName);
