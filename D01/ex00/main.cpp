@@ -18,6 +18,7 @@ void ponyOnTheHeap()
     Pony *pony = new Pony("Heap", 10);
     std::cout << GREEN << "Pony Create Heap with name: "  << pony->getName() << "his age: " << pony->getAge() << RESET << std::endl;
     delete pony;
+    pony = nullptr;
 }
 
 void ponyOnTheStack()

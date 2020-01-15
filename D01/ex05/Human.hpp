@@ -19,7 +19,6 @@
 #include <sstream>
 #include <iomanip>
 #include "Brain.hpp"
-//#include "ZombieEvent.hpp"
 #define GREEN   "\033[32m"
 #define RESET   "\033[0m"
 

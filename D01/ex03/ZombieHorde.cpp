@@ -31,6 +31,9 @@ ZombieHorde::ZombieHorde(int n)
 
 }
 
+ZombieHorde::ZombieHorde(){return ;}
+
+
 ZombieHorde::~ZombieHorde()
 {
     std::cout << RED << "ZombieEvent object destructor" << RESET << std::endl;

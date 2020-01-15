@@ -42,5 +42,5 @@ void Zombie::setZombieType(std::string _type)
 
 void Zombie::setName(std::string _name)
 {
-    this->type = _name;
+    this->name = _name;
 }

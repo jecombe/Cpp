@@ -16,6 +16,8 @@
 int main()
 {
     ZombieHorde zombieHorde = ZombieHorde(5);
+    ZombieHorde zombieHordeTwo = ZombieHorde();
     zombieHorde.annouce();
+    zombieHordeTwo.annouce();
     return 0;
 }

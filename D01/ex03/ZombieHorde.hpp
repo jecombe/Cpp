@@ -26,10 +26,11 @@ class ZombieHorde
 {
     public:
         ZombieHorde(int n);
+        ZombieHorde();
         ~ZombieHorde();
         std::string randomChump();
         void annouce();
-        //Zombie newZombie(std::string _name);
+        Zombie newZombie(std::string _name);
     private:
     Zombie *zombie;
     int nbHorde;

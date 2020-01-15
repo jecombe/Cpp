@@ -28,11 +28,10 @@ Brain::~Brain()
 
 void Brain::setAddr()
 {
- std::stringstream str;
+    std::stringstream str;
     str  << this;
     this->addrMemory = str.str();
     return ;
-    //this->type = _type;
 }
 
 std::string Brain::getAddr()

@@ -28,9 +28,11 @@ int main()
     zombieFirst = event.newZombie("TestName");
     std::cout << zombieFirst->announce() << std::endl;
     delete zombieFirst;
+    zombieFirst = nullptr;
 
     event.setZombieType("Sick");
     zombieSecond = event.randomChump();
     std::cout << zombieSecond->announce() << std::endl;
     delete zombieSecond;
+    zombieSecond = nullptr;
 }
