@@ -72,17 +72,10 @@ public:
     unsigned int getRandomAttackDamage() const;
 
 private:
-    //Attribut
-    std::string _name;
-    unsigned int _hitsPoints;
-    unsigned int _maxHitsPoint;
-    unsigned int _energyPoint;
-    unsigned int _maxEnergyPoint;
-    unsigned int _level;
-    unsigned int _meleeAttackDamage;
-    unsigned int _rangedAttackDamage;
-    unsigned int _armorDamageReduction;
+
     unsigned int  _randomAttackDamage;
+
+    //Attribut
 
 };
 

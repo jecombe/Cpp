@@ -23,7 +23,7 @@ FragTrap::FragTrap(std::string name) : _name(name)
     _level = 1;
     _meleeAttackDamage = 30;
     _rangedAttackDamage = 20;
-    _randomAttackDamage = 10;
+    _randomAttackDamage = 12;
     _armorDamageReduction = 5;
 }
 FragTrap &FragTrap::operator=(const FragTrap &f)
@@ -55,7 +55,7 @@ void FragTrap::rangedAttack(std::string const &target)
 
 void FragTrap::meleeAttack(std::string const &target)
 {
-    std::cout << CYAN << "FR4G-TP " << _name << " attack " << target << " at melee, causing " << _rangedAttackDamage << RESET << std::endl;
+    std::cout << BLUE << "FR4G-TP " << _name << " attack " << target << " at melee, causing " << _meleeAttackDamage << RESET << std::endl;
 }
 
 void FragTrap::takeDamage(unsigned int amount)
@@ -118,11 +118,11 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 }
 
 //ATTACK
-void FragTrap::attackAcid(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with acid attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void FragTrap::attackFire(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with fire attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void FragTrap::attackWater(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with water attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void FragTrap::attackGas(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with gas attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void FragTrap::attackNuclear(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with nuclear attack, causing " << _rangedAttackDamage << RESET << std::endl;}
+void FragTrap::attackAcid(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with acid attack, causing " << _randomAttackDamage << RESET << std::endl;}
+void FragTrap::attackFire(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with fire attack, causing " << _randomAttackDamage << RESET << std::endl;}
+void FragTrap::attackWater(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with water attack, causing " << _randomAttackDamage << RESET << std::endl;}
+void FragTrap::attackGas(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with gas attack, causing " << _randomAttackDamage << RESET << std::endl;}
+void FragTrap::attackNuclear(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with nuclear attack, causing " << _randomAttackDamage << RESET << std::endl;}
 
 //SETTER
 void FragTrap::setName() {}

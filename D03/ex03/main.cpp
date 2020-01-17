@@ -1,46 +1,92 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   main.cpp                                         .::    .:/ .      .::   */
+/*   main->cpp                                         ->::    ->:/ ->      ->::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
+/*   By: jecombe <jecombe@student->le-101->fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/16 18:02:01 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/16 18:44:42 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/16 18:44:42 by jecombe     ###    #+-> /#+    ###->fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 int main()
 {
-    FragTrap robotOne("TOTO");
-    FragTrap robotTwo("TITI");
-    FragTrap robotThree(robotTwo);
-
-    ScavTrap robotFour("TATA");
-    ScavTrap robotFive("TUTU");
+    FragTrap *robotOne = new FragTrap("TOTO");
+    FragTrap *robotTwo = new FragTrap("TITI");
+    FragTrap *robotThree = robotTwo;
     
     //Ranged Attack One VS Two
-    robotOne.rangedAttack(robotTwo.getName());
-    robotTwo.takeDamage(robotOne.getRangedAttackDamage());
+    std::cout << "RANGED ATTACK" << std::endl;
+    robotOne->rangedAttack(robotTwo->getName());
+    robotTwo->takeDamage(robotOne->getRangedAttackDamage());
 
     //Melee Attack Two VS One
-    robotTwo.meleeAttack(robotOne.getName());
-    robotOne.takeDamage(robotTwo.getMeleeAttackDamage());
+    std::cout << "MELEE ATTACK" << std::endl;
+    robotTwo->meleeAttack(robotOne->getName());
+    robotOne->takeDamage(robotTwo->getMeleeAttackDamage());
 
     //Ramdom Attack Two VS One
-    robotTwo.vaulthunter_dot_exe(robotOne.getName());
-    robotOne.takeDamage(robotTwo.getRandomAttackDamage());
+    std::cout << "RANDOM ATTACK" << std::endl;
+    robotTwo->vaulthunter_dot_exe(robotOne->getName());
+    robotOne->takeDamage(robotTwo->getRandomAttackDamage());
+    // Three VS One
+    robotThree->vaulthunter_dot_exe(robotOne->getName());
+    robotOne->takeDamage(robotThree->getRandomAttackDamage());
+    
+    //Delete allocation memory and set pointer to null pointer
+    delete robotTwo;
+    robotTwo = nullptr;
 
-    //Random Attack Three VS One
-    robotThree.vaulthunter_dot_exe(robotOne.getName());
-    robotOne.takeDamage(robotThree.getRandomAttackDamage());
 
-    //Random Challenge
-    robotFour.challengeNewcomer(robotFive.getName());
+    //SCAVTRAP
+    ScavTrap *robotFour = new ScavTrap("TATA");
+    ScavTrap *robotFive = new ScavTrap("TUTU");
+    ScavTrap *robotSix = robotFive;
+
+    //Ranged Attack Four VS Five
+    std::cout << "RANGED ATTACK" << std::endl;
+    robotFour->rangedAttack(robotFive->getName());
+    robotFive->takeDamage(robotFour->getRangedAttackDamage());
+
+    //Melee Attack Five VS Four
+    std::cout << "MELEE ATTACK" << std::endl;
+    robotFive->meleeAttack(robotFour->getName());
+    robotFour->takeDamage(robotFive->getMeleeAttackDamage());
+
+     //Random Challenge Four VS Five
+    std::cout << "CHALLENGE ATTACK" << std::endl;
+    robotFour->challengeNewcomer(robotFive->getName());
+    //Random challenge Six VS Four
+    robotSix->challengeNewcomer(robotFour->getName());
+
+     //Delete allocation memory and set pointer to null pointer
+    delete robotFive;
+    robotFive = nullptr;
+
+     //NINJA / CLAP
+	NinjaTrap *ninja = new NinjaTrap("NINJA");
+    ClapTrap *clap = new ClapTrap("TEST", 1, 2, 3, 4 , 5, 6 , 7 , 8);
+
+	ninja->ninjaShoebox(*ninja);
+	ninja->ninjaShoebox(*robotOne);
+	ninja->ninjaShoebox(*robotFour);
+    ninja->ninjaShoebox(*clap);
+
+    delete robotOne;
+    delete robotFour;
+    delete ninja;
+    delete clap;
+    robotOne = nullptr;
+    robotTwo = nullptr;
+    ninja = nullptr;
+    clap = nullptr;
+
 
     return 0;
 }

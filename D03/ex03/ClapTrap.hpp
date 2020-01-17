@@ -34,6 +34,8 @@ class ClapTrap
         ClapTrap(const ClapTrap &c);
         ~ClapTrap();
 
+    ClapTrap & operator=(ClapTrap const &c);
+
     //Methods
     void rangedAttack(std::string const &target);
     void meleeAttack(std::string const &target);

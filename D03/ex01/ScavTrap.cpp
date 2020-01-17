@@ -45,7 +45,7 @@ ScavTrap::~ScavTrap(){std::cout << BOLDRED << "Destroy Object ScavTrap with name
 //METHODS DEFAULT
 void ScavTrap::rangedAttack(std::string const &target){std::cout << BLUE << "FR4G-TP " << _name << " attack " << target << " at range, causing " << _rangedAttackDamage << RESET << std::endl;}
 
-void ScavTrap::meleeAttack(std::string const &target){std::cout << CYAN << "FR4G-TP " << _name << " attack " << target << " at melee, causing " << _rangedAttackDamage << RESET << std::endl;}
+void ScavTrap::meleeAttack(std::string const &target){std::cout << CYAN << "FR4G-TP " << _name << " attack " << target << " at melee, causing " << _meleeAttackDamage << RESET << std::endl;}
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
@@ -70,23 +70,15 @@ void ScavTrap::beRepaired(unsigned int amount)
     {
         setEnergyPoint(_energyPoint - amount);
         setHitsPoints(amount + _hitsPoints);
-        std::cout << GREEN << "FR4G-TP Be Repaired" << _name << RESET << std::endl;
+        std::cout << BLUE << "FR4G-TP Be Repaired" << _name << RESET << std::endl;
     }
     else
         std::cout << GREEN << "Can't be repaired" << _name << RESET << std::endl;
-    std::cout << YELLOW << "You have " << _energyPoint << "/" << _maxEnergyPoint << RESET << std::endl;
+    std::cout << YELLOW << "ENERGY POINT -> You have " << _energyPoint << "/" << _maxEnergyPoint << RESET << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(std::string const &target)
 {
-     static std::string challengeRandom[] = 
-     {
-         "Ice bucket challenge",
-         "Russian Roulette challenge",
-         "binge-drinking challenge",
-         "dwarf throw challenge",
-         "Jaming challenge"
-     };
       srand(time(nullptr));
         int fctRandom = rand() % 5;
 
@@ -103,13 +95,6 @@ void ScavTrap::challengeNewcomer(std::string const &target)
 
 }
 
-
-//ATTACK METHODS
-void ScavTrap::attackAcid(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with acid attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void ScavTrap::attackFire(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with fire attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void ScavTrap::attackWater(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with water attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void ScavTrap::attackGas(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with gas attack, causing " << _rangedAttackDamage << RESET << std::endl;}
-void ScavTrap::attackNuclear(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " attack " << target << " with nuclear attack, causing " << _rangedAttackDamage << RESET << std::endl;}
 
 //CHALLENGE METHODS
 void ScavTrap::iceBucket(std::string const &target){std::cout << MAGENTA << "FR4G-TP " << _name << " challenge " << target << " on Ice bucket challenge " << RESET << std::endl;}

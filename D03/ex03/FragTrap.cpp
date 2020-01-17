@@ -26,7 +26,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 100, 100, 1, 30,
 FragTrap::FragTrap(const FragTrap &f) : ClapTrap(f)
 {
 
-    std::cout << BOLDGREEN << "Create new Object FragTrap with name: " << _name << RESET << std::endl;
+    std::cout << BOLDGREEN << "Copy new Object FragTrap with name: " << _name << RESET << std::endl;
     _randomAttackDamage = 10;
   
 }

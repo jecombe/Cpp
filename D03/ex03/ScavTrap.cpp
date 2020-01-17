@@ -36,6 +36,8 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &f)
 
 ScavTrap::ScavTrap(const ScavTrap &s) : ClapTrap(s)
 {
+        std::cout << BOLDGREEN << "Copy new Object ScavTrap with name: " << _name << RESET << std::endl;
+
     
 }
 

@@ -30,6 +30,22 @@ ClapTrap::~ClapTrap()
 {
     return;
 }
+
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &c)
+{
+    std::cout << BOLDYELLOW << "Assignation FragTrap operator called" << std::endl;
+    _hitsPoints = c._hitsPoints;
+    _maxHitsPoint = c._maxEnergyPoint;
+    _energyPoint = c._energyPoint;
+    _level = c._level;
+    _meleeAttackDamage = c._meleeAttackDamage;
+    _rangedAttackDamage = c._rangedAttackDamage;
+    _armorDamageReduction = c._armorDamageReduction;
+    _name = c._name;
+
+    return *this;
+}
 //SETTER
 void ClapTrap::setName() {}
 void ClapTrap::setHitsPoints(unsigned int point) { _hitsPoints = point; }
