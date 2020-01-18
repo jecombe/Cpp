@@ -19,22 +19,30 @@ Character::Character(std::string const & name)
 {
     _name = name;
     _actionPoint = 40;
-    _weapon = NULL;
+    _weapon = nullptr;
 
 }
-Character::Character(const Character &ch)
+Character::Character(const Character &ch) {*this = ch;}
+Character::~Character(){return ;}
+
+
+Character &Character::operator=(const Character &c)
 {
-    *this = ch;
+    _name = c._name;
+    _weapon = c._weapon;
+    _actionPoint = c._actionPoint;
+    std::cout << BOLDYELLOW << "Assignation FragTrap operator called" << std::endl;
+    return *this;
 }
-
 std::ostream &operator<<(std::ostream &o, Character const &ch)
 {
-    if (ch.getWeapon() != NULL)
+    if (ch.getWeapon() != nullptr)
         o << ch.getName() << " has " << ch.getActionPoint() << " AP and wields a " << ch.getWeapon()->getName() << std::endl;
     else
         o << ch.getName() << " has " << ch.getActionPoint() << " and is unarmed " << std::endl;
     return o;
 }
+
 
 void Character::recoverAP()
 {
@@ -45,7 +53,6 @@ void Character::recoverAP()
     
 }
 void Character::equip(AWeapon *weapon){_weapon = weapon;}
-
 void Character::attack(Enemy *enemy)
 {
     if (!enemy->getHP())
@@ -62,20 +69,10 @@ void Character::attack(Enemy *enemy)
                 delete enemy;
         _actionPoint = _actionPoint - price;
         }
-        std::cout << CYAN << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
+        std::cout << CYAN << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << RESET << std::endl;
         enemy = nullptr;
     }
 
-}
-
-
-Character &Character::operator=(const Character &c)
-{
-    _name = c._name;
-    _weapon = c._weapon;
-    _actionPoint = c._actionPoint;
-    std::cout << BOLDYELLOW << "Assignation FragTrap operator called" << std::endl;
-    return *this;
 }
 
 //getter

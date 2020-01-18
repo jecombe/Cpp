@@ -13,21 +13,10 @@
 
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type)
-{
-}
-
-Enemy::Enemy(){};
-
-Enemy::Enemy(const Enemy &en)
-{
-    *this = en;
-}
-
-Enemy::~Enemy()
-{
-    return;
-}
+Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type){return;}
+Enemy::Enemy(){return;};
+Enemy::Enemy(const Enemy &en){*this = en;}
+Enemy::~Enemy(){return;}
 
 
 Enemy &Enemy::operator=(const Enemy &en)
@@ -39,7 +28,6 @@ Enemy &Enemy::operator=(const Enemy &en)
 
 
 std::string Enemy::getType() const{return _type;}
-
 int Enemy::getHP() const{ return _hp;}
 
 void Enemy::takeDamage(int domage)
@@ -53,12 +41,5 @@ void Enemy::takeDamage(int domage)
     else
          _hp = dom;
 }
-
-void Enemy::setType(std::string type)
-{
-    _type = type;
-}
-void Enemy::setHp(int hp)
-{
-    _hp = hp;
-}
+void Enemy::setType(std::string type){_type = type;}
+void Enemy::setHp(int hp){_hp = hp;}

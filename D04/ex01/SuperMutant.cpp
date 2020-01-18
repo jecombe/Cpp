@@ -18,12 +18,7 @@ SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 {
     std::cout << BOLDGREEN << "Gaaah. Me want smash heads !" <<  RESET << std::endl;
 }
-
-SuperMutant::SuperMutant(const SuperMutant &s)
-{
-    *this = s;
-    std::cout << BOLDGREEN << "Create new Copy Object SuperMutant" << RESET << std::endl;    
-}
+SuperMutant::SuperMutant(const SuperMutant &s) {*this = s;}
 
 SuperMutant::~SuperMutant()
 {
@@ -35,7 +30,6 @@ SuperMutant::~SuperMutant()
 SuperMutant &SuperMutant::operator=(const SuperMutant &en)
 {
     Enemy::operator=(en);
-    std::cout << BOLDYELLOW << "Assignation FragTrap operator called" << std::endl;
     return *this;
 }
 

@@ -1,19 +1,9 @@
 #include "PlasmaRifle.hpp"
 
 
-PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
-{
-};
-
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &aw)
-{
-    *this = aw;
-}
-
-PlasmaRifle::~PlasmaRifle()
-{
-    return;
-}
+PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21){return;};
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &aw) {*this = aw;}
+PlasmaRifle::~PlasmaRifle(){return;}
 
 
 PlasmaRifle &PlasmaRifle::operator=(const PlasmaRifle &c)

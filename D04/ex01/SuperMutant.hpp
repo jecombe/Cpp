@@ -39,7 +39,6 @@
 #define BOLDCYAN "\033[1m\033[36m"    /* Bold Cyan */
 #define BOLDWHITE "\033[1m\033[37m"   /* Bold White */
 
-
 class SuperMutant : public Enemy
 {
     public:
@@ -47,7 +46,6 @@ class SuperMutant : public Enemy
         SuperMutant(const SuperMutant &e);
         virtual ~SuperMutant();
         SuperMutant & operator=(SuperMutant const &e);
-
         virtual void takeDamage(int);
 
 };

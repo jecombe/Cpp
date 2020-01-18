@@ -18,18 +18,13 @@ RadScorpion::RadScorpion() : Enemy(80, "Rad Scorpion")
 {
     std::cout << BOLDGREEN << "* click click click *" <<  RESET << std::endl;
 }
-
-
-RadScorpion::RadScorpion(const RadScorpion &r)
-{
-    *this = r;
-}
-
+RadScorpion::RadScorpion(const RadScorpion &r){*this = r;}
 RadScorpion::~RadScorpion()
 {
     std::cout << BOLDRED <<  "* SPROTCH *"  << RESET << std::endl;
     return;
 }
+
 
 RadScorpion &RadScorpion::operator=(const RadScorpion &en)
 {
