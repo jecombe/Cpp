@@ -6,7 +6,7 @@
 /*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 17:15:54 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:21:17 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 20:35:24 by jecombe     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,15 +31,14 @@ char Scalable::convertChar()
         throw ImpossibleExecption();
     if (std::isprint(static_cast<char>(getDouble())) == false)
         throw NotPrintExecption();
-        
-        return static_cast<char>(getDouble());
+    return static_cast<char>(getDouble());
 }
 
 int Scalable::convertInt()
 {
-    if (isnan(getDouble()) == true || isinf(getDouble()) == true)
+    if (std::isnan(getDouble()) == true || std::isinf(getDouble()) == true)
         throw ImpossibleExecption();
-    if (getDouble() < INT_MAX || getDouble() > INT_MIN)
+    if (getDouble() < static_cast<double>(INT_MIN) || getDouble() > static_cast<double>(INT_MAX))
         throw ImpossibleExecption();
     return static_cast<int>(getDouble());
 }
@@ -74,6 +73,7 @@ double Scalable::getDouble() const { return _double; }
 int Scalable::getInt() const { return _int; }
 float Scalable::getFloat() const { return _float; }
 char Scalable::getChar() const { return _char; }
+unsigned long int Scalable::getPrecision() const {return _precision;};
 
 const char *Scalable::NotPrintExecption::what(void) const throw()
 {

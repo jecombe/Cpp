@@ -6,7 +6,7 @@
 /*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 17:14:10 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:05:00 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/21 20:27:59 by jecombe     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,6 +55,8 @@ public:
     int getInt() const;
     float getFloat() const;
     double getDouble() const;
+    unsigned long int getPrecision() const;
+
 
        class NotPrintExecption : public std::exception 
         {
