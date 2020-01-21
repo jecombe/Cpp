@@ -14,28 +14,62 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-void    checkForm(Form form, Bureaucrat bureau)
+void    signForm(Form form, Bureaucrat bureau)
 {
     try
     {
-        bureau.signForm(&form);
-        std::cout << bureau << std::endl;
-        std::cout << form << std::endl;
+        bureau.signForm(form);
+      
 
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << BOLDRED << e.what() << RESET << std::endl;
     }
+}
+
+void checkGrade(int sign, int exec)
+{
+    	try {
+		Form fLow("Alice", sign, exec);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << BOLDRED <<  e.what() << RESET << std::endl;
+	}    
 }
 
 int main()
 {
+	std::cout <<  YELLOW << "* low grade execption" << RESET << std::endl;
+    checkGrade(420, 42);
+        checkGrade(42, 420);
+
+
+	std::cout <<  YELLOW << "* high grade execption" << RESET << std::endl;
+            checkGrade(0, 101);
+            checkGrade(101, 0);
+
+
+    std::cout << YELLOW << "* sign" << RESET << std::endl;
+	Form formTwo("FORME_TWO", 74, 56);
     Form formOne("FORM_ONE", 80, 98);
-    Form formTwo("FORME_TWO", 74, 56);
-    Bureaucrat bureauOne("BUREAU_ONE", 85);
-    Bureaucrat bureauTwo("BUREAU_TWO", 1);
+    
+    
+    
+    try {
+            Bureaucrat bureauTwo("BUREAU_TWO", 0);
+            Bureaucrat bureauOne("BUREAU_ONE", 85);
+            signForm(formOne, bureauOne);
+            signForm(formTwo, bureauOne);
+            signForm(formOne, bureauTwo);
+            signForm(formTwo, bureauTwo);
+		}
+		catch (std::exception &e)
+		{
+			std::cout << BOLDRED   << e.what() << RESET << std::endl;
+		}
 
-    checkForm(formOne, bureauTwo);
 
+   
 }

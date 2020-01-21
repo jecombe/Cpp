@@ -52,20 +52,14 @@ class Bureaucrat
         class GradeTooHighException : public std::exception 
         {
             public:
-             virtual const char * what(void) const throw ()
-             {
-                 return "Grade Too HighException";
-             }
+             virtual const char * what(void) const throw ();
 
             private:
         };
         class GradeTooLowException : public std::exception 
         {
             public:
-             virtual const char * what(void) const throw ()
-             {
-                 return "Grade Too LowException";
-             }
+             virtual const char * what(void) const throw ();
             
             private:
         };

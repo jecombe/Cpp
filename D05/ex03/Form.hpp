@@ -6,7 +6,7 @@
 /*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/20 15:33:37 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/20 21:01:15 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/20 21:01:30 by jecombe     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,40 +23,47 @@
 
 class Form
 {
+public:
+    Form(const std::string, std::string, const int, const int);
+    virtual ~Form();
+    Form(const Form &);
+    Form &operator=(Form const &);
+
+    //methods
+    void beSigned(Bureaucrat &);
+    virtual void execute(Bureaucrat const &executor) const;
+
+    //getter
+    std::string getName() const;
+    int getGradeSign() const;
+    int getGradeExecute() const;
+    bool getSigned() const;
+    std::string getTarget() const;
+
+    //imbrique class
+    class GradeTooHighException : public std::exception
+    {
     public:
-        Form(const std::string, const int, const int);
-        ~Form();
-        Form(const Form &);
-        Form & operator=(Form const &);
-        
-        //methods
-        void beSigned(Bureaucrat &);
-        //getter
-         std::string getName() const;
-         int getGradeSign() const;
-         int getGradeExecute() const;
-        bool getSigned() const;
+        virtual const char *what(void) const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        virtual const char *what(void) const throw();
+    };
+     class NotSignExecption : public std::exception
+    {
+    public:
+        virtual const char *what(void) const throw();
+    };
 
-
-        //imbrique class
-        class GradeTooHighException : public std::exception 
-        {
-            public:
-             virtual const char * what(void) const throw ();
-        };
-        class GradeTooLowException : public std::exception 
-        {
-            public:
-             virtual const char * what(void) const throw ();
-        };
-
-        //attribut
-    private:
-        const std::string _name;
-        bool _signed;
-        const int _gradeSign;
-        const int _gradeExecute;
-
+    //attribut
+private:
+    const std::string _name;
+    const std::string _target;
+    bool _signed;
+    const int _gradeSign;
+    const int _gradeExecute;
 };
 
 //operator ostream
