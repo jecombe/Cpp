@@ -42,7 +42,7 @@ class Scalable
 {
 
 public:
-    Scalable(char *);
+    Scalable(const char *);
     ~Scalable();
 
     //methods
@@ -62,16 +62,12 @@ public:
         {
             public:
              virtual const char * what(void) const throw ();
-
-            private:
         };
 
        class ImpossibleExecption : public std::exception 
         {
             public:
              virtual const char * what(void) const throw ();
-
-            private:
         };
     
     

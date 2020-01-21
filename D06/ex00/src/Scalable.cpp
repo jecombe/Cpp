@@ -16,36 +16,37 @@
 #include <cmath>
 #include <cfloat>
 
-Scalable::Scalable(char *input) : _input(input)
+Scalable::Scalable(const char *input)
 {
-    _precision = presiscion();
+    _input = input;
     _double = atof(input);
  
 }
+
 Scalable::~Scalable() { return; }
 
 //methods
 char Scalable::convertChar()
 {
-    if (std::isnan(getDouble()) == true)
+    if (isnan(getDouble()))
         throw ImpossibleExecption();
-    if (std::isprint(static_cast<char>(getDouble())) == false)
+    if (!isprint(static_cast<char>(getDouble())))
         throw NotPrintExecption();
     return static_cast<char>(getDouble());
 }
 
 int Scalable::convertInt()
 {
-    if (std::isnan(getDouble()) == true || std::isinf(getDouble()) == true)
+    if (isnan(getDouble()) || isinf(getDouble()))
         throw ImpossibleExecption();
-    if (getDouble() < static_cast<double>(INT_MIN) || getDouble() > static_cast<double>(INT_MAX))
+    if (getDouble() < (INT_MIN) || getDouble() > (INT_MAX))
         throw ImpossibleExecption();
     return static_cast<int>(getDouble());
 }
 
 float Scalable::convertFloat()
 {
-    return static_cast<float>(getDouble());
+    return (static_cast<float>(_double));
 }
 
 double Scalable::convertDouble()
@@ -53,21 +54,6 @@ double Scalable::convertDouble()
     return getDouble();
 }
 
-unsigned long int Scalable::presiscion()
-{
-    unsigned long int after = 0;
-    unsigned long int indiceP = 0;
-
-    if ((indiceP = _input.find('.')) != std::string::npos)
-        after = indiceP + 1;
-    while (_input[after] && isdigit(_input[after]))
-        after += 1;
-    after -= indiceP;
-    if (_input.length() == indiceP || after == 1)
-        return 1;
-    else
-        return after - 1;
-}
 
 double Scalable::getDouble() const { return _double; }
 int Scalable::getInt() const { return _int; }

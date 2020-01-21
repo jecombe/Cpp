@@ -18,13 +18,15 @@
 #include "main.hpp"
 #include "Scalable.hpp"
 
-int main(int argc, char *argv[])
+
+int main(int argc, const char *argv[])
 {
     if (argc < 2)
         return 0;
-
+    
     Scalable conversion(argv[1]);
-    std::cout << CYAN << "char: ";
+
+    std::cout << CYAN << "char: " << RESET;
     try
     {
         std::cout << GREEN <<  conversion.convertChar() << RESET << std::endl;
@@ -33,7 +35,7 @@ int main(int argc, char *argv[])
     {
         std::cerr << BOLDRED << e.what()  << RESET << '\n';
     }
-    std::cout << CYAN << "int: ";
+    std::cout << CYAN << "int: " << RESET;
     try
     {
         std::cout << GREEN << conversion.convertInt() << RESET << std::endl;
@@ -42,19 +44,19 @@ int main(int argc, char *argv[])
     {
         std::cerr << BOLDRED << e.what()  << RESET << '\n';
     }
-     std::cout << CYAN << "float: ";
+     std::cout << CYAN << "float: " << RESET;
     try
     {
-        std::cout << GREEN << std::setprecision(conversion.getPrecision()) << conversion.convertFloat()  << RESET << std::endl;
+        std::cout << GREEN << std::setprecision(1)  << std::fixed <<  conversion.convertFloat() << "f" << RESET << std::endl;
     }
     catch (const std::exception &e)
     {
         std::cerr << BOLDRED << e.what()  << RESET << '\n';
     }
-    std::cout << CYAN << "double: ";
+    std::cout << CYAN << "double: " << RESET;
     try
     {
-        std::cout <<  GREEN << std::setprecision(conversion.getPrecision()) << conversion.convertDouble() <<  RESET << std::endl;
+        std::cout <<  GREEN << std::setprecision(1) << std::fixed << conversion.convertDouble() <<  RESET << std::endl;
     }
     catch (const std::exception &e)
     {
