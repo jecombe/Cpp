@@ -6,15 +6,11 @@
 /*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 12:45:57 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:39:44 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 19:04:26 by jecombe     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "main.hpp"
-#include <iostream>
-#include <string.h>
-#include <iomanip>
 #include "main.hpp"
 #include "Scalable.hpp"
 

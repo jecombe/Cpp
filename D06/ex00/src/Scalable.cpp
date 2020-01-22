@@ -6,7 +6,7 @@
 /*   By: jecombe <jecombe@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/21 17:15:54 by jecombe      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/21 20:35:24 by jecombe     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 17:06:58 by jecombe     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,7 +39,7 @@ int Scalable::convertInt()
 {
     if (isnan(getDouble()) || isinf(getDouble()))
         throw ImpossibleExecption();
-    if (getDouble() < (INT_MIN) || getDouble() > (INT_MAX))
+    if (getDouble() < INT_MIN || getDouble() > INT_MAX)
         throw ImpossibleExecption();
     return static_cast<int>(getDouble());
 }
